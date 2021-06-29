@@ -1,1 +1,5 @@
-<p>home works!</p>
+<component-input (validado)="itemValidado($event)"></component-input>
+
+<ng-template [ngIf]="mostrarMensagem">
+  <p>está válido</p>
+</ng-template>

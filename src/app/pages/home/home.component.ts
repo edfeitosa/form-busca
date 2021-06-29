@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AgenciasService } from '../../services/agencias.service';
-
 @Component({
-  selector: 'app-home',
+  selector: 'page-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private agenciasService: AgenciasService) { }
+  mostrarMensagem: boolean = false;
 
-  ngOnInit(): void {
-    this.getAgencias();
-  }
+  constructor() { }
 
-  getAgencias(): void {
-    this.agenciasService.getAgencias().subscribe(dados => console.log(dados));
+  ngOnInit(): void { }
+
+  itemValidado(validado: boolean): void {
+    this.mostrarMensagem = validado;
   }
 
 }
